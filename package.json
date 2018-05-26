@@ -1,0 +1,19 @@
+{
+  "name": "shakira",
+  "version": "1.0.0",
+  "description": "Media Player",
+  "dependencies": {
+    "commander": "^2.15.1",
+    "express": "^4.16.3",
+    "pug": "^2.0.3"
+  },
+  "bin": {
+    "shakira": "bin/cli.js"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

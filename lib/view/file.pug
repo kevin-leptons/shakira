@@ -1,0 +1,37 @@
+extends layout.pug
+
+block body-content
+    ul(class='file-explorer')
+        each file in files
+            li(class='file clear-fix')
+                case file.type
+                    when 'dir'
+                        a(href='/file?path=' + file.path)= file.name
+                    when 'media'
+                        span(class='file-name')= file.name
+                        ul(class='file-control')
+                            li
+                                a(class='control-play', href='/stream/' + file.path)= 'STREAM'
+                            li
+                                button(class='control-play', onclick='play_file("' + file.path + '")')= 'PLAY'
+                    default
+                        a(href='/stream/' + file.path)= file.name
+        li(class='file clear-fix')
+            span(class='file-total')= 'Total ' + files.length + ' files'
+
+    ul(class='file-nav')
+        li(class='screen-box')
+            div(id='player-label', class='player-label')= 'Nothing Playing'
+        li(class='right')
+            case cwd
+                when '.'
+                    a(href='/file?path=' + up_dir,  class='disabled')= 'UP'
+                default
+                    a(href='/file?path=' + up_dir)= 'UP'
+        li(class='right')
+            if (cwd == up_dir)
+                a(href='/', class='disabled')= 'ROOT'
+            else
+                a(href='/')= 'ROOT'
+        li(class='right')
+            button(class='nav-btn', onclick='stop_player()')= 'STOP'

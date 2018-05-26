@@ -1,0 +1,36 @@
+NAGA
+====
+
+Media player.
+
+FUNCTIONS
+=========
+
+* Remote PC to play media files from other devices through Web Brower
+* Stream media files which is supported by Web Browser
+
+INSTALLATION
+============
+
+There are development installation. It is not release right now.
+
+Step 1 - Install infrastructure:
+
+    * VLC - https://www.videolan.org/vlc/
+    * Node.js - https://nodejs.org/en/
+
+Step 2 - Install rest of parts:
+
+    $ npm install 
+
+USAGE
+=====
+
+Run Web Server and use through Web Browser:
+
+    $ node bin/cli.js --dir MEDIA_DIRECTORY
+
+Options:
+
+    * --dir: Directory which contains media files, default is current directory
+    * --port: Port which is listen, default is 6789
