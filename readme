@@ -1,5 +1,5 @@
-NAGA
-====
+SHAKIRA
+=======
 
 Media player.
 
@@ -21,7 +21,7 @@ Step 1 - Install infrastructure:
 
 Step 2 - Install rest of parts:
 
-    $ npm install 
+    $ npm install
 
 USAGE
 =====
