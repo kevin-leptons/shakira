@@ -4,24 +4,27 @@ const program = require('commander');
 
 const {Application} = require('../lib');
 
-program.version('0.0.0');
+program.version('1.0.1');
 
 program.
+    command('serve <media_dir>').
     description('Run media server').
-    option('-d, --dir <dir>', 'Specific media directory').
     option('-p, --port <port>', 'Sepcific listen port').
-    parse(process.argv);
+    action(cli_serve);
 
-program.dir = program.dir || '.';
-program.port = program.port || 6789;
+program.parse(process.argv);
 
-const app = new Application();
+function cli_serve(media_dir, opts) {
+    opts.port = opts.port || 6789;
 
-let listener = app.root(program.dir).listen(program.port, online_callback);
+    const app = new Application();
 
-function online_callback() {
-    let addr = listener.address();
-    let msg = `${addr.family} http://localhost:${addr.port}`;
+    let listener = app.
+        root(media_dir).
+        listen(opts.port, () => {
+            let addr = listener.address();
+            let msg = `${addr.family} http://localhost:${addr.port}`;
 
-    console.log(msg);
+            console.log(msg);
+        });
 }
