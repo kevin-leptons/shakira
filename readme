@@ -28,7 +28,7 @@ USAGE
 
 Run Web Server and use through Web Browser:
 
-    $ node bin/cli.js MEDIA_DIRECTORY [OPTIONS]
+    $ shakira MEDIA_DIRECTORY [OPTIONS]
 
 Arguments:
 
