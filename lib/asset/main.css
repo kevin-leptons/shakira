@@ -95,9 +95,9 @@ a:hover {
 
 .file-explorer li.file {
     list-style: none;
-    padding: 4px 0px;
+    padding: 4px 8px;
     clear: both;
-    border-bottom: 1px dotted var(--fg-color);
+    border-bottom: 1px dotted var(--cm-color);
 }
 
 .file-explorer a:hover {
@@ -132,6 +132,7 @@ a:hover {
     border: 0;
     outline: 0;
     font-size: var(--normal-font-size);
+    padding-right: 0;
 }
 
 .control-play:hover {
