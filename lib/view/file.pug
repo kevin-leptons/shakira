@@ -14,6 +14,8 @@ block body-content
                                 a(class='control-play', href='/stream/' + file.path)= 'STREAM'
                             li
                                 button(class='control-play', onclick='play_file("' + file.path + '")')= 'PLAY'
+                        if (file.thumb)
+                            img(src='/thumb/' + file.thumb, class='thumb')
                     default
                         a(href='/stream/' + file.path)= file.name
         li(class='file clear-fix')
