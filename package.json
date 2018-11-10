@@ -1,6 +1,6 @@
 {
   "name": "shakira",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Media Player",
   "dependencies": {
     "commander": "^2.15.1",
